@@ -1,103 +1,129 @@
-<!DOCTYPE html>
+<!--   For browsersync, run
+--browser-sync start --server --directory --files "*"                          -->
+
+<!--  Problems and Doubts
+
+I need to learn how to use the same navbar/footer/something in many html pages -->
+
+<!--
+Todo:
+remove overlay of stars
+add js to include many stars instead of doing it by including by hand many divs
+restrict the stars to half the first container (more dense to left actually: fade-out). I think that if I add them to the whole background it might slow it down? let's see how it goes..
+maybe the random stars could show a random "funny fact"
+-->
+
+
+<!DOCTYPe html>
 <html lang="en-us">
+
 <head>
-<style>
-.box1{
-   float: left;
-   margin: 10px;
-   padding: 10px;
-   width: 200px;
-   height: 300px;
-}   
-</style>
-
-<style>
-.box2{
-   float: left;
-   margin: 10px;
-   padding: 10px;
-   width: 400px;
-   height: 300px;
-}   
-</style>
-
-<style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: BlueViolet;
-  color: white;
-  text-align: center;
-}
-</style>
-
-  
-   
-   
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow: hidden;
-  background-color: BlueViolet;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: red;
-}
-</style>      
-   
+  <meta charset="utf-8" content="width=device-width, initial-scale=1">
+  <title> lissadscampos </title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+  </style>
 </head>
-   
+
+
 <body>
 
-<ul>
-  <li><a href="#what">?</a></li>
-  <li><a href="#aboutme">about me</a></li>
-  <li><a href="#research">research</a></li>
-  <li><a href="#coolstuff">cool stuff</a></li>
-</ul>
-   
-   <h1>lissadesouzacampos</h1>
+<header>
+<div class="container" style="height:900px">
+  <div class="top-left">
+    <h1 style="font-size:40px">Greetings dear space traveler</h1>
+    <h2 style="font-size:20px">and welcome to my homepage! </h2>
+    <div class="navbar">
+      <a class="star"  href="aboutme.html" position style="font-size:40px; color:blue; text-decoration: none; position: absolute; top: 200px; left: 400px;"> &#9734;
+                <h1 class="hide" style="font-size:30px">About me</h1>
+      </a>
+      <a class="star" href="findmeat.html" style="font-size:40px; color:magenta; text-decoration: none;position: absolute; top: 300px; left: 500px;"> &#9734;
+                <h1  class="hide" style="font-size:30px">Find me at</h1>
+      </a>
+      <a class="star" href="research.html" style="font-size:40px; color:green; text-decoration: none;position: absolute; top: 400px; left: 200px;"> &#9734;
+                <h1 class="hide" style="font-size:30px">Research</h1>
+      </a>
+      <a class="star" href="mycvs.html" style="font-size:40px; color:red; text-decoration: none;position: absolute; top: 500px; left: 300px;"> &#9734;
+                <h1 class="hide" style="font-size:30px">My life's course so far</h1>
+      </a>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+      <div class="randomstar">&#9734;</div>
+    </div>
+  </div>
+</div>
+</header>
 
-   <div class="box1">
-       <img src="bh.png" width="200">
-   </div>
 
-   <div class="box2">
-     <h2>Greetings dear space traveler</h2>
-     <h1>and welcome to my homepage!</h1>
+<div class="footer">
+  <div> <a href="index.html" title="lissadscampos" style="text-decoration: none; color:white"> lissadscampos&#9786; </a></div>
+</div>
 
-      <p> I'm still working on this... </p>
-   </div>
 
-   <div class="footer">
-      <p> find me at </p>
-      <a href="https://github.com/lissadesouzacampos"> GitHub </a>
-       <p>no copyright©</p>
-   </div>
-   
-   
-   
+<!--          stars!!!!!!!!!!!                                                 -->
+
+
+<script>
+// I found something online and adapted to this....
+//collect divs
+var stars = document.querySelectorAll('div.randomstar');
+// get window width and height
+var winWidth = window.innerWidth;
+var winHeight = window.innerHeight;
+
+// i stands for "index". you could also call this banana or haircut. it's a variable
+for ( var i=0; i < stars.length; i++ ) {
+
+    // shortcut! the current div in the list
+    var thisDiv = stars[i];
+
+    // get random numbers for each element
+    randomTop = getRandomNumber(0, winHeight);
+    randomLeft = getRandomNumber(0, winWidth);
+    randomSize = getRandomNumber(5, 42);
+
+
+    // update top and left position
+    thisDiv.style.top = randomTop +"px";
+    thisDiv.style.left = randomLeft +"px";
+    thisDiv.style.fontSize = randomSize +"px";
+
+}
+
+// function that returns a random number between a min and max
+function getRandomNumber(min, max) {
+
+  return Math.random() * (max - min) + min;
+
+}
+</script>
+
 </body>
-   
-</html>
 
-  
-  
+</html>

@@ -1,0 +1,73 @@
+<!--  Problems and Doubts
+
+Like this it works well in my larger screen and ONLY IF the zoom is at 100%.
+How can I fix a region of an image that gets rescaled according to screen size??
+Learn about position relative vs absolute and rescaling....                    -->
+
+<!DOCTYPe html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8" content="width=device-width, initial-scale=1">
+  <title> aboutme </title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  .top-left {
+    position: absolute;
+    padding:20px;
+    margin: 20px;
+    background-color:LightSkyBlue;
+    opacity:.6;
+    color:black;
+    width:900px;
+  }
+  #Graffiti {
+    position: absolute;
+    top: 350px;
+    left: 1200px;
+    width: 200px;
+    height: 450px;
+    border: 0px solid;
+    cursor: help;
+}
+  #Graffiti:hover {
+      display: block;
+      position: absolute;
+      top: 350px;
+      left: 1200px;
+      width: 200px;
+      height: 450px;
+      border: 3px solid #73AD21;
+  }
+  #Graffiti:hover .hide{
+      display: block;
+  }
+  </style>
+</head>
+
+<body>
+   <div class="container">
+       <img src="img_menininha.jpg" align="right" width=100%>
+       <div class="top-left">
+         <h1 style="font-size:35px">About me</h1>
+           <p> My name is Lissa and I'm a physicist. </p>
+             <p>   I was born in Brasilia, the capital of Brazil;
+             but I learned how to walk and spent most of my childhood in Vitoria, a nice beach in the southeast of Brazil.
+             Before moving to Italy to do my PhD (just finished!), I did my undergrads and masters in São Paulo: a 20+million inhabitants city where one can find many cool graffitis, such as the one in this background. </p>
+             <!-- <p style="text-align:right"> <u> read more...</u></p>     todo:  when clicked on, display more stuff about me -->
+             <div id="Graffiti">
+                 <a  class="hide" href="https://apolotorres.com/" style="text-decoration:none; color:black; font-size: 20px; padding-top: 10px; text-align: center"> Apolo Torres
+                 </a>
+             </div>
+       </div>
+   </div>
+
+
+   <div class="footer">
+     <div> <a href="index.html" title="lissadscampos" style="text-decoration: none; color:white"> lissadscampos&#9786; </a></div>
+   </div>
+
+
+</body>
+
+</html>
